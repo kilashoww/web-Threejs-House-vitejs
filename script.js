@@ -20,18 +20,18 @@ function init() {
 
     camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 
-    camera.position.set(0, 0, 50);
+    camera.position.set(0, 0, 5);
 
     //lights
-    /*
-    const ambiant = new THREE.AmbientLight(0x404040, 3);
-    scene.add(ambiant);*/
 
-    const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    // const ambiant = new THREE.AmbientLight(0x404040, 3);
+    //scene.add(ambiant);
+
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
     dirLight.position.set(-3, 10, -10);
     scene.add(dirLight);
 
-    const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.4);
+    const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.8);
     hemiLight.position.set(0, 20, 0);
     scene.add(hemiLight);
 
@@ -49,15 +49,15 @@ function init() {
         scene.add(gltf.scene);
         house = gltf.scene.children[0];
         renderer.render(scene, camera);
-        //animate();
+        animate();
     });
 
     //animate
-    /*function animate() {
+    function animate() {
         requestAnimationFrame(animate);
         house.rotation.z += 0.005;
         renderer.render(scene, camera);
-    };*/
+    };
 
 
 

@@ -1,26 +1,18 @@
-
-
-let container;
-let camera;
-let renderer;
-let scene;
-
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import gsap from "gsap";
+import './style.css';
 
 function init() {
-    container = document.querySelector('.scene');
+
 
     //create scene
-    scene = new THREE.Scene();
+    const scene = new THREE.Scene;
 
-    //create camera
-    const fov = 35;
-    const aspect = container.clientWidth / container.clientHeight;
-    const near = 0.1;
-    const far = 500;
-
-    camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-
-    camera.position.set(0, 0, 5);
+    //camera
+    const camera = new THREE.PerspectiveCamera(45, size.width / size.height, 0.1, 100);
+    camera.position.z = 20;
+    scene.add(camera);
 
     //lights
 
@@ -36,12 +28,11 @@ function init() {
     scene.add(hemiLight);
 
     //create renderer
-    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.shadowMap.enabled = true;
-
-    container.appendChild(renderer.domElement);
+    const canvas = document.querySelector('.webgl');
+    const renderer = new THREE.WebGLRenderer({ canvas });
+    renderer.setSize(size.width, size.height);
+    renderer.setPixelRatio(2);
+    renderer.render(scene, camera);
 
     //load model
     let loader = new THREE.GLTFLoader();

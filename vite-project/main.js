@@ -2,19 +2,15 @@
 //Imports
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import gsap from "gsap";
+//import gsap from "gsap";
 import './style.css';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 
 // scene
+const canvas = document.querySelector('.webgl');
 const scene = new THREE.Scene;
-/*
-//thorusknotgeometry
-const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
-const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
-const mesh = new THREE.Mesh(geometry, material);
-scene.add(mesh);*/
+
 
 //load model
 const loader = new GLTFLoader();
@@ -26,9 +22,10 @@ loader.load('./house/scene.gltf', function (gltf) {
 
 
 //Sizes
+
 const size = {
-  width: window.innerWidth,
-  height: window.innerHeight,
+  width: canvas.clientWidth,
+  height: canvas.clientHeight,
 }
 
 //light
@@ -50,7 +47,7 @@ camera.position.z = 20;
 scene.add(camera);
 
 //renderer
-const canvas = document.querySelector('.webgl');
+
 const renderer = new THREE.WebGLRenderer({ canvas });
 renderer.setSize(size.width, size.height);
 renderer.setPixelRatio(2);
@@ -86,7 +83,7 @@ const animation = () => {
 }
 
 animation();
-
+/*
 //timeline magicc
 const tl = gsap.timeline({ defaults: { duration: 1 } });
 tl.fromTo(loader.scale, { z: 0, x: 0, y: 0 }, { z: .15, x: .15, y: .15 });
@@ -106,4 +103,4 @@ window.addEventListener("mousemove", (e) => {
     let newColor = new THREE.Color(`rgb(${rgb.join(",")})`);
     gsap.to(mesh.material.color, { r: newColor.r, g: newColor.g, b: newColor });
   }
-})
+})*/

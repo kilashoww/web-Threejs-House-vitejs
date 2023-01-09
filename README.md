@@ -1,7 +1,7 @@
 
 # Web-Threejs House-vitejs
 
-Threejs GTLF House scene loading test for website page inclusions.
+Threejs GTLF House scene loading test for website page inclusions.Three JS doesn't work when import modules into JS code, so VITE JS is needed to make it works fine.
 
 ## Table of contents
 

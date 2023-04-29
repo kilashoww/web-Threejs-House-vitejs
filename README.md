@@ -44,4 +44,4 @@ So as you want: 1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ I looove so much coffee 
 
 ## Wakatime
 
-[![wakatime](https://wakatime.com/badge/user/06e45670-5dab-4fd0-87ef-cecd51e17204/project/d75215ac-3924-46f3-bce9-504a78ac533f.svg)](https://wakatime.com/badge/user/06e45670-5dab-4fd0-87ef-cecd51e17204/project/d75215ac-3924-46f3-bce9-504a78ac533f)
+[![wakatime](https://wakatime.com/badge/github/kilashoww/ThreejsHouse.svg)](https://wakatime.com/badge/github/kilashoww/ThreejsHouse)
